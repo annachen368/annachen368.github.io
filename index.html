@@ -7,26 +7,36 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="intro-section">
-  <div class="profile-photo">
-    <img src="io.jpg" alt="Anna Chen" />
-  </div>
-  <div class="intro-text">
-    <h1>Hey Friends 👋</h1>
-    <p>I’m Anna. I’m an Android Developer with 9+ years of experience building delightful mobile experiences.</p>
-  </div>
-</header>
+  <header>
+    <div class="intro-section">
+      <div class="profile-photo">
+        <img src="io.jpg" alt="Anna Chen" />
+      </div>
+      <div class="intro-text">
+        <h1>Hi there, I'm Anna</h1>
+        <p>I'm an Android Developer with over 9 years of experience creating user-friendly and reliable mobile apps.</p>
+        <p>Outside of work, I love cooking, playing games, and building fun side projects.</p>
+      </div>
+    </div>
+  </header>
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project-list">
-      <div class="project">
-        <h3>Contact Picker App</h3>
-        <p>An Android app with Jetpack Compose and advanced lazy loading techniques for large datasets.</p>
-      </div>
-      <div class="project">
-        <h3>Expense Tracker</h3>
-        <p>Personal finance app using Room DB, MVVM, and Material Design. Clean and smooth UI.</p>
+    <div class="project">
+      <h3>Improved performance for contact loading and service calls when handling 2000+ contacts</h3>
+      <div class="project-content">
+        <video class="project-video" controls autoplay muted loop>
+          <source src="optimize_zelle.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="project-description">
+          <ul>
+            <li>Instead of loading everything at once, added pagination to fetch 200 contacts at a time as the user scrolls.</li>
+            <li>Added a debounced search (300ms delay) and skipped repeated queries to avoid unnecessary service calls.</li>
+            <li>Used a Mutex to avoid running the same check multiple times at once.</li>
+            <li>Ran background coroutines to check enroll status without blocking the main screen.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>

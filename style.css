@@ -9,7 +9,7 @@ body {
 header {
   padding: 60px 20px;
   text-align: center;
-  background-color: #f0f4ff;
+  background-color: #dbeeff;
 }
 
 h1 {
@@ -38,7 +38,6 @@ section {
   align-items: center;
   gap: 2rem;
   padding: 2rem;
-  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -59,6 +58,26 @@ section {
 .intro-text p {
   font-size: 1.2rem;
   line-height: 1.6;
+}
+
+.project-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap; /* makes layout responsive */
+}
+
+.project-video {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-description {
+  flex: 1;
+  min-width: 200px;
 }
 
 form {
@@ -88,6 +107,6 @@ button:hover {
 footer {
   text-align: center;
   padding: 20px;
-  background: #f0f4ff;
+  background: #dbeeff;
   font-size: 0.9em;
 }
