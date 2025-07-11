@@ -30,11 +30,19 @@
           Your browser does not support the video tag.
         </video>
         <div class="project-description">
+          <p><strong>Problem:</strong></p>
           <ul>
-            <li>Instead of triggering 10+ service calls on launch to check enroll status for all contacts, added pagination to request status for 200 contacts at a time as the user scrolls.</li>
-            <li>Added a debounced search (300ms delay) and skipped repeated queries to avoid unnecessary service calls.</li>
-            <li>Used a Mutex to avoid running the same check multiple times at once.</li>
-            <li>Ran background coroutines to check enroll status without blocking the main thread.</li>
+            <li>The previous implementation checked the enrollment status of contacts in batches of 200, but the service calls ran on the main thread, causing UI lag during scrolling.</li>
+            <li>To avoid lag, the logic was changed to trigger all service calls at once on launch, which made the screen load extremely slowly for users with large contact lists.</li>
+          </ul>
+
+          <p><strong>My Solution:</strong></p>
+          <ul>
+            <li>Implemented pagination to load and check enroll status for 200 contacts at a time as the user scrolls.</li>
+            <li>Used background coroutines to move service calls off the main thread.</li>
+            <li>Added a 300ms debounced search and suppressed repeated queries to reduce unnecessary requests.</li>
+            <li>Introduced a Mutex to prevent duplicate concurrent status checks.</li>
+            <li><em>This solution is currently behind a feature switch in production. Once testing is complete, it’s expected to go live later this year.</em></li>
           </ul>
         </div>
       </div>
