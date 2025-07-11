@@ -31,10 +31,10 @@
         </video>
         <div class="project-description">
           <ul>
-            <li>Instead of loading everything at once, added pagination to fetch 200 contacts at a time as the user scrolls.</li>
+            <li>Instead of triggering 10+ service calls on launch to check enroll status for all contacts, added pagination to request status for 200 contacts at a time as the user scrolls.</li>
             <li>Added a debounced search (300ms delay) and skipped repeated queries to avoid unnecessary service calls.</li>
             <li>Used a Mutex to avoid running the same check multiple times at once.</li>
-            <li>Ran background coroutines to check enroll status without blocking the main screen.</li>
+            <li>Ran background coroutines to check enroll status without blocking the main thread.</li>
           </ul>
         </div>
       </div>
