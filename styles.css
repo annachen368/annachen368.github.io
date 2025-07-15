@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+}
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.95rem;
+}
+.hero {
+  background: #a0c1d1;
+  color: white;
+  text-align: center;
+  padding: 6rem 1rem;
+}
+.hero h1 {
+  font-size: 2.5rem;
+}
+.hero p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+.filter-buttons {
+  text-align: center;
+  margin: 2rem 0;
+}
+.filter-buttons button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0;
+  padding: 0 2rem; /* Default for small screens */
+}
+
+/* Medium screens (tablets and up) */
+@media (min-width: 768px) {
+  .gallery {
+    padding: 0 5rem;
+  }
+}
+
+/* Large screens (desktops and up) */
+@media (min-width: 1200px) {
+  .gallery {
+    padding: 0 10rem;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1600px) {
+  .gallery {
+    padding: 0 20rem;
+  }
+}
+.gallery-item img {
+  width: 100%;
+  display: block;
+}
+.project {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.project-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap; /* makes layout responsive */
+}
+
+.project-video {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-description {
+  flex: 1;
+  min-width: 200px;
+}
+.section {
+  display: none;
+}
+
+.section.show {
+  display: block;
+}
+
+
+#contact {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+#contact p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+#contact a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive padding */
+@media (min-width: 768px) {
+  #contact {
+    padding: 4rem 5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  #contact {
+    padding: 4rem 10rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  #contact {
+    padding: 4rem 20rem;
+  }
+}

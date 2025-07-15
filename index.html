@@ -1,50 +1,90 @@
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anna Chen | Android Developer</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anna Portfolio</title>
+<link href="styles.css" rel="stylesheet"/>
+<style>
+    html { scroll-behavior: smooth; }
+
+    .section {
+      display: none;
+    }
+
+    .section.show {
+      display: block;
+    }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="intro-section">
-      <div class="profile-photo">
-        <img src="io.jpg" alt="Anna Chen" />
-      </div>
-      <div class="intro-text">
-        <h1>Hi there, I'm Anna</h1>
-        <p>I'm an Android Developer with over 9 years of experience creating user-friendly and reliable mobile apps.</p>
-        <p>Outside of work, I love cooking, playing games, and building fun side projects.</p>
-      </div>
-    </div>
-  </header>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3></h3>
-      <div class="project-content">
-        <video class="project-video" controls autoplay muted loop>
-          <source src="optimize_zelle.mp4" type="video/mp4">
+<header>
+<nav class="navbar">
+<div class="logo">Anna</div>
+<ul class="nav-links">
+<li><a href="#" onclick="showSection('home')">Home</a></li>
+<li><a href="#" onclick="showSection('portfolio')">Portfolio</a></li>
+</ul>
+</nav>
+</header>
+<!-- Home Section -->
+<div class="section show" id="home-section">
+<div class="hero">
+<h1>Hi there, I'm Anna</h1>
+<p>I'm an Android Developer with over 9 years of experience creating user-friendly and reliable mobile apps.</p>
+<p>Outside of work, I love cooking, playing games, and building fun side projects.</p>
+</div>
+<!-- <section class="filter-buttons">
+      <button>Show All</button>
+      <button>Design</button>
+      <button>Illustration</button>
+      <button>Branding</button>
+    </section> -->
+<section class="gallery">
+<div class="gallery-item"><img alt="Android" src="images/android.png"/></div>
+<div class="gallery-item"><img alt="Bike" src="images/bike.png"/></div>
+<div class="gallery-item"><img alt="Keyboard" src="images/keyboard.png"/></div>
+<div class="gallery-item"><img alt="Coffee" src="images/coffee.png"/></div>
+</section>
+<section id="contact">
+<h2>Contact</h2>
+<p>You can reach me at <a href="mailto:annachen368@gmail.com">annachen368@gmail.com</a></p>
+<p>Or connect with me on <a href="https://www.linkedin.com/in/anna-c-05277386/" target="_blank">LinkedIn</a></p>
+</section>
+</div>
+<!-- Portfolio Section -->
+<div class="section" id="portfolio-section" style="display: none;">
+<div class="hero">
+<h1>My Portfolio</h1>
+<p>Here are some of my projects.</p>
+<section id="projects">
+<div class="project">
+<h3></h3>
+<div class="project-content">
+<video autoplay="" class="project-video" controls="" loop="" muted="">
+<source src="optimize_zelle.mp4" type="video/mp4"/>
           Your browser does not support the video tag.
         </video>
-        <div class="project-description">
-          <p><strong>Improved performance for contact loading and service calls when handling 2000+ contacts</strong></p>
-          <p>The contact list screen triggered all service calls at once on launch, causing performance issues. I optimized it by introducing coroutine-based pagination, debounced user input, and a Mutex lock to prevent duplicate network calls. This improved load time and scroll smoothness for large contact sets.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="project-description">
+<p><strong>Improved performance for contact loading and service calls when handling 2000+ contacts</strong></p>
+<p>The contact list screen triggered all service calls at once on launch, causing performance issues. I optimized it by introducing coroutine-based pagination, debounced user input, and a Mutex lock to prevent duplicate network calls. This improved load time and scroll smoothness for large contact sets.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>You can reach me at <a href="mailto:annachen368@gmail.com">annachen368@gmail.com</a></p>
-    <p>Or connect with me on <a href="https://www.linkedin.com/in/anna-c-05277386/" target="_blank">LinkedIn</a></p>
-  </section>
+</div>
+<script>
+function showSection(sectionId) {
+  const sections = document.querySelectorAll('.section');
 
-  <footer>
-    <p>© 2025 Anna Chen</p>
-  </footer>
+  sections.forEach((sec) => {
+    sec.style.display = (sec.id === sectionId + '-section') ? 'block' : 'none';
+  });
+}
+</script>
 </body>
 </html>
