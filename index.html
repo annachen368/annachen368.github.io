@@ -23,27 +23,15 @@
   <section id="projects">
     <h2>Projects</h2>
     <div class="project">
-      <h3>Improved performance for contact loading and service calls when handling 2000+ contacts</h3>
+      <h3></h3>
       <div class="project-content">
         <video class="project-video" controls autoplay muted loop>
           <source src="optimize_zelle.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <div class="project-description">
-          <p><strong>Problem:</strong></p>
-          <ul>
-            <li>The previous implementation checked the enrollment status of contacts in batches of 200, but the service calls ran on the main thread, causing UI lag during scrolling.</li>
-            <li>To avoid lag, the logic was changed to trigger all service calls at once on launch, which made the screen load extremely slowly for users with large contact lists.</li>
-          </ul>
-
-          <p><strong>My Solution:</strong></p>
-          <ul>
-            <li>Implemented pagination to load and check enroll status for 200 contacts at a time as the user scrolls.</li>
-            <li>Used background coroutines to move service calls off the main thread.</li>
-            <li>Added a 300ms debounced search and suppressed repeated queries to reduce unnecessary requests.</li>
-            <li>Introduced a Mutex to prevent duplicate concurrent status checks.</li>
-            <!-- <li><em>This solution is currently behind a feature switch in production. Once testing is complete, it’s expected to go live later this year.</em></li> -->
-          </ul>
+          <p><strong>Improved performance for contact loading and service calls when handling 2000+ contacts</strong></p>
+          <p>The contact list screen triggered all service calls at once on launch, causing performance issues. I optimized it by introducing coroutine-based pagination, debounced user input, and a Mutex lock to prevent duplicate network calls. This improved load time and scroll smoothness for large contact sets.</p>
         </div>
       </div>
     </div>
